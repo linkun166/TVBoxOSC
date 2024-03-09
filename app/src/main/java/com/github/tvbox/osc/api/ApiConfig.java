@@ -79,7 +79,7 @@ public class ApiConfig {
     }
 
     public void loadConfig(boolean useCache, LoadConfigCallback callback, Activity activity) {
-        String apiUrl = Hawk.get(HawkConfig.API_URL, "https://jihulab.com/tvbox8503047/VIP/-/raw/main/百度贴吧专用.json");
+        String apiUrl = Hawk.get(HawkConfig.API_URL, "https://jihulab.com/tvbox8503047/VIP/-/raw/main/百度贴吧专用完整版.json");
         if (apiUrl.isEmpty()) {
             callback.error("-1");
             return;
@@ -114,8 +114,8 @@ public class ApiConfig {
                                 FileOutputStream fos = new FileOutputStream(cache);
                                 fos.write(json.getBytes("UTF-8"));
                                 fos.flush();
-                                fos.close();
-                            } catch (Throwable th) {
+                                fos.close();close();
+                            } catch (Throwable th) {} catch (Throwable th) {
                                 th.printStackTrace();
                             }
                             callback.success();
